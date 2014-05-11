@@ -5,6 +5,8 @@ _________
   • Switched out reset.css for normalize.css
   • Added description meta tag
   • Clear <body> defaults
+  • Added Boilerplate helper classes
+  • Combined sensible defaults
 
 04.29.14
 _________
