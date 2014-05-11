@@ -12,14 +12,16 @@ Tags: 			  starkers, boilerplate, html5, basic
 ===========================
 CONTENTS:
 
-01 Sensible defaults
+01 Utilities
 02 Typography
-03 Media queries 
+03 Base
+04 Media queries 
+05 Print styles 
 ===========================
 */
 
 /* ---------------------------------------------------------------------------------------------------------- 
-01 Sensible defaults ----------------------------------------------------------------------------------------
+01 Utilities ------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------- */
 
 div,
@@ -30,8 +32,51 @@ footer,
 nav,
 li { position:relative; } /* For absolutely positioning elements within containers (add more to the list if need be) */
 .clearfix:after { content: ""; display: table; clear: both; }  /* For clearing */
-::-moz-selection { background:#ff0; color:#333; }
-::selection { background:#ff0; color:#333; } /* selection has been removed from the specification, so this might disappear */
+::-moz-selection { background:#ff0; color:#333; text-shadow: none; }
+::selection { background:#ff0; color:#333; text-shadow: none; } /* selection has been removed from the specification, so this might disappear */
+
+/*
+ * Hide visually and from screen readers: h5bp.com/u
+ */
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers: h5bp.com/v
+ */
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+.invisible {
+    visibility: hidden;
+}
 
 /* ---------------------------------------------------------------------------------------------------------- 
 02 Typography -----------------------------------------------------------------------------------------------
@@ -39,7 +84,9 @@ li { position:relative; } /* For absolutely positioning elements within containe
 
 html { font-size: 62.5%; } /* font-size in rem is based on 10px */
 
-body { 
+body {
+  font-size: 14px; font-size: 1.4rem;
+  line-height: 1.4;
 }
 
 h1, 
@@ -50,10 +97,64 @@ h5,
 h6 { font-weight:bold; }
 
 /* ---------------------------------------------------------------------------------------------------------- 
-03 Media queries (using a mobile-first approach) ------------------------------------------------------------
+03 Base -----------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------- */
 
-/* 400 and up */
+/*
+ * A better looking default horizontal rule
+ */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between images, videos, audio and canvas and the bottom of
+ * their containers: h5bp.com/i/440
+ */
+audio,
+canvas,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+textarea {
+  resize: vertical;
+}
+
+/* ---------------------------------------------------------------------------------------------------------- 
+04 Custom CSS and media queries -----------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------- */
+
+/*
+  Browse Happy prompt
+*/
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* Assume most likely em=16px */
 @media screen and (min-width:400px) {
 
 					{ /* Place your styles here for all widths greater than 400px */ }
@@ -65,4 +166,71 @@ h6 { font-weight:bold; }
 
 					{ /* Place your styles here for all 'Retina' screens */ }
 
+}
+
+
+/* ---------------------------------------------------------------------------------------------------------- 
+05 Print styles: h5bp.com/r ---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------- */
+
+@media print {
+  * {
+    background: transparent !important;
+    color: #000 !important; /* Black prints faster: h5bp.com/s */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links for images, or javascript/internal links
+   */
+
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: "";
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  thead {
+    display: table-header-group; /* h5bp.com/t */
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
 }
