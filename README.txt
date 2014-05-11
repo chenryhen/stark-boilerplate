@@ -1,4 +1,4 @@
-05.10.14
+v1.0
 _________
 
   • Replaced default WP jQuery with Google CDN
