@@ -1,7 +1,17 @@
-        04.29.14
+05.10.14
+_________
+
+  • Replaced default WP jQuery with Google CDN
+  • Switched out reset.css for normalize.css
+  • Added description meta tag
+  • Clear <body> defaults
+
+04.29.14
+_________
         
-        A custom blend of the HTML5 Boilerplate (http://html5boilerplate.com/) and Starkers by Viewport Industries (see 
-        below). 
+  A custom blend of the HTML5 Boilerplate (http://html5boilerplate.com/) and Starkers by Viewport Industries (see below). 
+        
+        
 
 	- - - - - - - - - - - - - - - - - - - - - - -
 

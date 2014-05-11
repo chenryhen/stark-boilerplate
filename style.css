@@ -1,11 +1,11 @@
 /*
-Theme Name: 	Starkers
-Theme URI: 		http://viewportindustries.com/products/starkers
-Description: 	The totally nude Wordpress theme!
-Version: 		4.0
-Author: 		Elliot Jay Stocks & Keir Whitaker
-Author URI: 	http://viewportindustries.com
-Tags: 			starkers, naked, clean, basic
+Theme Name: 	Stark Boilerplate
+Theme URI: 		https://github.com/chenryhen/stark-boilerplate
+Description: 	An HTML5 Wordpress theme starting point
+Version: 		  1.0
+Author: 		  Henry Chen after the work of Elliot Jay Stocks & Keir Whitaker (https://github.com/viewportindustries/starkers) and the H5BP team (https://github.com/h5bp)
+Author URI: 	http://chenryhen.com
+Tags: 			  starkers, boilerplate, html5, basic
 */
 
 /*
@@ -22,7 +22,7 @@ CONTENTS:
 01 Sensible defaults ----------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------- */
 
-@import "css/reset.css";
+@import "css/normalize.css";
 
 div,
 article,
@@ -30,11 +30,10 @@ section,
 header,
 footer,
 nav,
-li					{ position:relative; /* For absolutely positioning elements within containers (add more to the list if need be) */ }
-.group:after 		{ display:block; height:0; clear:both; content:"."; visibility:hidden; /* For clearing */ }
-body 				{ background:#fff; /* Don't forget to style your body to avoid user overrides */ }
-::-moz-selection 	{ background:#ff0; color:#333; }
-::selection 		{ background:#ff0; color:#333; }
+li { position:relative; /* For absolutely positioning elements within containers (add more to the list if need be) */ }
+.clearfix:after { content: ""; display: table; clear: both; /* For clearing */ }
+::-moz-selection { background:#ff0; color:#333; }
+::selection { background:#ff0; color:#333; }
 
 /* ---------------------------------------------------------------------------------------------------------- 
 02 Typography -----------------------------------------------------------------------------------------------
