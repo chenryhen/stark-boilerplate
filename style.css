@@ -39,7 +39,8 @@ li { position:relative; } /* For absolutely positioning elements within containe
 
 html { font-size: 62.5%; } /* font-size in rem is based on 10px */
 
-body {}
+body { 
+}
 
 h1, 
 h2, 
