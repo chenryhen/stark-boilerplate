@@ -69,6 +69,9 @@
 
 		wp_register_script( 'site', get_template_directory_uri().'/js/site.js', array( 'jquery' ), '1.0', true );
 		wp_enqueue_script( 'site' );
+    
+    wp_register_style( 'normalize', get_stylesheet_directory_uri().'/css/normalize.css', '', '', 'screen' );
+    wp_enqueue_style( 'normalize' );
 
 		wp_register_style( 'screen', get_stylesheet_directory_uri().'/style.css', '', '', 'screen' );
     wp_enqueue_style( 'screen' );
