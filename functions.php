@@ -64,10 +64,10 @@
 
 	function script_enqueuer() {
 	  wp_deregister_script( 'jquery' );
-    wp_register_script( 'jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js", false, null );
+    wp_register_script( 'jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js", false, true );
     wp_enqueue_script( 'jquery' );
 
-		wp_register_script( 'site', get_template_directory_uri().'/js/site.js', array( 'jquery' ) );
+		wp_register_script( 'site', get_template_directory_uri().'/js/site.js', array( 'jquery' ), '1.0', true );
 		wp_enqueue_script( 'site' );
 
 		wp_register_style( 'screen', get_stylesheet_directory_uri().'/style.css', '', '', 'screen' );
